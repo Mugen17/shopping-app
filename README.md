@@ -2,6 +2,7 @@
 A basic shopping application developed using Flask and VueJs and hosted on Heroku with a MySQL database on Clever Cloud
 
 Link to application: https://shopping-app-flask.herokuapp.com/
+
 **Note:** If you face a database error message while logging in, please try again. This might be due to the database instance going to sleep.
 
 ## Functionalities
