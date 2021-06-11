@@ -41,7 +41,7 @@ Link to application: https://shopping-app-flask.herokuapp.com/
 * /user/login
   * body contains username, candidate password 
 * /user/logout
-* /user/getUser?token=<adminToken>&userId=<userId>
+* /user/getUser?token=[adminToken]&userId=<userId>
 * /user/list?page=
 * /order/history?token=<userToken>
 * /order/list
