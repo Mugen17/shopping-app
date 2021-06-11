@@ -15,8 +15,15 @@ class Item(db.Model):
 
 	id = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String(255))
+	image = db.Column(db.LargeBinary(length=(2**32)-1))
+	mimetype = db.Column(db.Text)
+	description = db.Column(db.Text)
+	price = db.Column(db.Float)
 	created_at = db.Column(db.TIMESTAMP, default=db.func.now())
 	carts = db.relationship("Cart", secondary="items_carts")
+
+	def __getitem__(self, field):
+		return self.__dict__[field]
 
 @dataclass
 class Cart(db.Model):

@@ -1,10 +1,14 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, session
 from model import *
 from extensions import db
 from routes import *
 from settings import *
 from utils import *
 from passlib.hash import sha256_crypt
+import base64
+from os import listdir
+from werkzeug import datastructures
+import json
 
 # Customizing jinja options for sake of preference
 class CustomFlask(Flask):
@@ -21,6 +25,7 @@ app.register_blueprint(userRoutes, url_prefix="/user")
 app.register_blueprint(cartRoutes, url_prefix="/cart")
 app.register_blueprint(itemRoutes, url_prefix="/item")
 app.register_blueprint(orderRoutes, url_prefix="/order")
+app.secret_key = SECRET_KEY
 
 # Connecting to database
 app.config['SQLALCHEMY_DATABASE_URI'] = SQL_CONNECTION
@@ -47,13 +52,22 @@ def createAdmin():
 	except Exception as e:
 		logging.error(str(e))
 
-
 # Functions to create initial 10 items
 def addItems():
-	for i in range(10):
-		name = "item"+str(i)
-		createItemUtil(name)
-	logging.info(INITIAL_ITEMS_ADDED)
+	# Reading from json seed file
+	path = './static/items.json'
+	with open(path,"rb") as f:
+		data = json.load(f)
+		items = data['items']
+		for item in items:
+			name = item['name']
+			description = item['description']
+			price = item['price']
+			imgPath = item['path']
+			# Getting image from path extracted from seed file
+			with open(imgPath,"rb") as imgFile:
+				image = datastructures.FileStorage(stream=imgFile)
+				createItemUtil(name,description,price,image)
 
 # Tasks to be done at start of server
 def startUpTasks():
@@ -70,7 +84,24 @@ startUpTasks()
 # Route for home	
 @app.route("/")
 def home():
-	return render_template('home.jsp')
+	token = '';
+	isAdmin = '';
+	try:
+		# Checking if user is already in session
+		if("token" in session):
+			token = session["token"]
+			with app.app_context():
+				# Decoding token to extract userid
+				data = jwt.decode(token,SECRET_KEY, algorithms=["HS256"])
+				# Fetching user through user id
+				user = User.query.filter_by(id=data['userId']).first()
+				isAdmin = user.is_admin
+		return render_template('home.jsp', token=token, isAdmin=isAdmin)
+	# If token has expired
+	except Exception as e:
+		logging.error(str(e))
+		return render_template('home.jsp', token=token, isAdmin=isAdmin)
+
 
 if __name__ == '__main__':
 	app.run(debug=True)

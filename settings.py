@@ -1,6 +1,12 @@
-# This module contains all the string constants used
+# This module contains all the constants used
 # SECRET_KEY = add secret key for encoding token here
 # SQL_CONNECTION = add sql connection here
+
+ITEMS_PER_PAGE = 5
+PER_PAGE = 5
+
+TOKEN_VALIDITY_MINUTES = 60
+
 
 INVALID_CREDENTIALS_ERROR = "Incorrect username/password"
 SUCCESSFUL_LOGIN = "Login Successful!"
@@ -33,3 +39,9 @@ TABLES_EXIST = "Tables exist"
 ADMIN_CREATED = "Admin created"
 INITIAL_ITEMS_ADDED = "Initial items added"
 STARTUP_TASKS_COMPLETED = "Startup tasks completed"
+UNAUTHORIZED = "User not authorized to make this request"
+FETCH_USER_SUCCESS = "User fetched Successfully"
+FETCH_USER_FAILED = "Failed to fetch user"
+LOGGED_OUT = "Logged out Successfully"
+LOG_OUT_FAILED = "Failed to log out"
+DUPLICATE_LOGIN = "User already logged in. Please log out from previous session"
