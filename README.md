@@ -10,14 +10,19 @@ Link to application: https://shopping-app-flask.herokuapp.com/
 * Register new user (only as Customer)
 * Password saved after encrypting
 * Login
+* Browser session maintained. User will stay logged in at refresh of page unless browser is closed or user explicitly logs out
 * An admin user is created by default (username: admin, password: admin)
 * Admin has the capability to
   * List all items
   * Add new item (items of the same name can be added)
-  * List all users and view details by clicking on user
+  * List all users
+    * View details of user
+    * View current cart of user
   * List all active carts and view details by clicking on cart
   * List all orders and view details by clicking on order
 * Admin does not have a cart and hence can't checkout either
+* All lists are shown paginated (server side pagination since this is a ecommerce platform and can have a lot of products)
+* Items have image, description and price
 * Customer has the capability to
   * Add or remove item from cart by clicking on it. Currently, we are not maintaining count of items
   * View history of orders made by current user
@@ -28,8 +33,6 @@ Link to application: https://shopping-app-flask.herokuapp.com/
 
 ## Next Steps
 * Make it mobile responsive
-* Add pagination for items (server side preferred)
-* Maintain session on browser
 * Allow for creation of more admin users
 * Maker-Checker for addition of items and creation of admins
 * Feature to remove item from list of items
