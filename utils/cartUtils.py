@@ -52,8 +52,11 @@ def convertToOrderUtil(cartId,user):
 	db.session.commit()
 	logging.info(str(cartId)+" converted to order")
 
-def getCartsListUtil():
-	# Fetching all carts
-	carts = Cart.query.all()
-	logging.info(FETCH_CARTS_SUCCESS)
-	return carts
+# Function to get all carts
+def getCartsListUtil(page):
+	# Pagination
+	paginate = Cart.query.filter_by(is_purchased=False).paginate(per_page=PER_PAGE,page=page)
+	carts = paginate.items
+	totalPages = paginate.pages
+	logging.info(RETRIEVE_ITEMS_SUCCESS)
+	return carts, totalPages

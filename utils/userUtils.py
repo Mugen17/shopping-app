@@ -24,11 +24,20 @@ def createUserUtil(name,username,password,token,isAdmin):
 	logging.info(SUCCESSFUL_SIGNUP+" for username: "+username)
 
 def generateTokenUtil(user):
-	token = jwt.encode({'userId': user.id,'exp':datetime.datetime.utcnow()+datetime.timedelta(minutes=30)}, SECRET_KEY)
+	token = jwt.encode({'userId': user.id,'exp':datetime.datetime.utcnow()+datetime.timedelta(minutes=TOKEN_VALIDITY_MINUTES)}, SECRET_KEY)
 	return token	
 
-def getUsersListUtil():
-	# Fetching all users from database
-	users = User.query.all()
-	logging.info(RETRIEVE_USERS_SUCCESS)
-	return users
+# Function to get list of users
+def getUsersListUtil(page):
+	# Pagination
+	paginate = User.query.paginate(per_page=PER_PAGE,page=page)
+	users = paginate.items
+	totalPages = paginate.pages
+	logging.info(RETRIEVE_ITEMS_SUCCESS)
+	return users, totalPages
+
+# Function to get user from user id
+def getUserUtil(userId):
+	user = User.query.filter_by(id=userId).first()
+	logging.info(FETCH_USER_SUCCESS)
+	return user

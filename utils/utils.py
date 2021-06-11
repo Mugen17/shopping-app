@@ -26,7 +26,7 @@ def token_required(f):
 			# Fetching user through user id
 			user = User.query.filter_by(id=data['userId']).first()
 		except:
-			return jsonify({'message':'Token is invalid'}), 403
+			return jsonify(message='Token is invalid'), 403
 
 		return f(user, *args, **kwargs)
 	return decorated

@@ -4,13 +4,20 @@ from settings import *
 from utils import *
 
 # Util functions for code modularity
-def createItemUtil(name):
-	item = Item(name=name)
+def createItemUtil(name,description,price,image=None):
+	if(image!=None):
+		item = Item(name=name,image=image.read(),mimetype=image.mimetype,description=description,price=price)
+	else:
+		item = Item(name=name,image=None,mimetype=None)
 	db.session.add(item)
 	db.session.commit()
 	logging.info(ITEM_CREATION_SUCCESS+" for item: "+name)
 
-def getItemsListUtil():
-	items = Item.query.all()
+# Function to get all items
+def getItemsListUtil(page):
+	# Pagination
+	paginate = Item.query.paginate(per_page=ITEMS_PER_PAGE,page=page)
+	items = paginate.items
+	totalPages = paginate.pages
 	logging.info(RETRIEVE_ITEMS_SUCCESS)
-	return items
+	return items, totalPages

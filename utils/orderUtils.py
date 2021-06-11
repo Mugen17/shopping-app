@@ -13,8 +13,11 @@ def getOrderHistoryUtil(user):
 	logging.info(ORDER_HISTORY_FETCHED+" for user: "+str(user.id))
 	return result
 
-def getOrdersListUtil():
-	# Fetching all orders
-	orders = Order.query.all()
-	logging.info(FETCH_ORDERS_SUCCESS)
-	return orders
+# Function to get all orders
+def getOrdersListUtil(page):
+	# Pagination
+	paginate = Order.query.paginate(per_page=PER_PAGE,page=page)
+	orders = paginate.items
+	totalPages = paginate.pages
+	logging.info(RETRIEVE_ITEMS_SUCCESS)
+	return orders, totalPages
