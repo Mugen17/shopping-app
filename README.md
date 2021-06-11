@@ -37,7 +37,8 @@ Link to application: https://shopping-app-flask.herokuapp.com/
 
 ## Endpoints
 * /user/create
-* /user/login
+  body contains name, username, password 
+* /user/login 
 * /user/logout
 * /user/getUser
 * /user/list
