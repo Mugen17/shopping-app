@@ -45,6 +45,23 @@ def getCartItems(user):
 		logging.error(str(e))
 		return jsonify(message=FETCH_CART_ITEMS_FAILED), 500
 
+# Route for getting all items in a cart from given cart id
+@cartRoutes.route("/getItemsFromId",methods=['GET'])
+@token_required
+def getCartItemsFromId(user):
+	try:
+		cartId = request.args.get('cartId')
+		# Only admin should be able to get cart from cart id
+		if(not user.is_admin):
+			return jsonify(message=UNAUTHORIZED), 401
+		else:
+			items, cart_id = getCartItemsUtil(cartId)
+			return jsonify(message=FETCH_CART_ITEMS_SUCCESS, cartItems=items, cartId=cartId), 200
+	except Exception as e:
+		logging.error(str(e))
+		return jsonify(message=FETCH_CART_ITEMS_FAILED), 500
+
+
 # Route for converting cart to order
 @cartRoutes.route("/complete", methods=['POST'])
 @token_required
@@ -61,7 +78,9 @@ def convertToOrder(user):
 @cartRoutes.route("/list", methods=['GET'])
 def getCartsList():
 	try:
-		return jsonify(message=FETCH_CARTS_SUCCESS, carts=getCartsListUtil()), 200
+		page = int(request.args.get('page'))
+		carts, totalPages = getCartsListUtil(page)
+		return jsonify(message=FETCH_CARTS_SUCCESS, carts=carts, totalPages=totalPages), 200
 	except Exception as e:
 		logging.error(str(e))
 		return jsonify(message=FETCH_CARTS_FAILED), 500

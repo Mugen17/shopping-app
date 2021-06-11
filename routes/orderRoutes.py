@@ -23,7 +23,9 @@ def getOrderHistory(user):
 @orderRoutes.route("/list", methods=['GET'])
 def getOrdersList():
 	try:
-		return jsonify(message=FETCH_ORDERS_SUCCESS, orders=getOrdersListUtil()), 200
+		page = int(request.args.get('page'))
+		orders, totalPages = getOrdersListUtil(page)
+		return jsonify(message=FETCH_ORDERS_SUCCESS, orders=orders, totalPages=totalPages), 200
 	except Exception as e:
 		logging.error(str(e))
 		return jsonify(message=FETCH_ORDERS_FAILED), 500
