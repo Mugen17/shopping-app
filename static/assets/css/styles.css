@@ -42,9 +42,124 @@
 }
 
 .brand{
-    margin-left: 2rem;
+    margin-left: 2%;
 }
 
 .options-container{
-    margin-right: 1rem;
+    margin-right: 1%;
+}
+/*img{
+    max-width: 100%;
+    max-height: auto;
+    display: block;
+}*/
+.box{
+    width: 100%;        
+}    
+.box.large{
+    height: 300px;
+}
+.box.small{
+    height: 100%;
+}
+
+.product-details{
+    background-color: grey
+}
+
+.navbar{
+    background-color: #1b99d5
+}
+
+.list-page{
+    margin: auto;
+    margin-top: 3%;
+    width: 50%;
+}
+
+.list-height{
+    min-height: 80vh;
+}
+
+.item-card{
+    height: 10rem;
+}
+
+.product-sub-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.product-image{
+    height: 100%;
+    width: auto;
+}
+.module {
+  width: 100%;
+  margin: 0 0 1em 0;
+  overflow: hidden;
+}
+.module p {
+  margin: 0;
+}
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+}
+
+textarea
+{
+  width:100%;
+}
+/*.textwrapper
+{
+  border:1px solid #999999;
+  margin:5px 0;
+  padding:3px;
+}*/
+
+
+
+
+body {
+    background: #89CFF0
+}
+
+.ratings i {
+    font-size: 16px;
+    color: red
+}
+
+.strike-text {
+    color: red;
+    text-decoration: line-through
+}
+
+.dot {
+    height: 7px;
+    width: 7px;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-top: 3px;
+    background-color: blue;
+    border-radius: 50%;
+    display: inline-block
+}
+
+.spec-1 {
+    color: #938787;
+    font-size: 15px
+}
+
+h5 {
+    font-weight: 400
+}
+
+.para {
+    font-size: 16px
 }
