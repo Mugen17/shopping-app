@@ -34,7 +34,23 @@ Link to application: https://shopping-app-flask.herokuapp.com/
   * View cart of current user
   * Convert current cart to an order (checkout)
 * Logout 
- 
+
+## Endpoints
+* /user/create
+* /user/login
+* /user/logout
+* /user/getUser
+* /user/list
+* /order/history
+* /order/list
+* /item/create
+* /item/list
+* /cart/add
+* /cart/remove
+* /cart/getItems
+* /cart/getItemsFromId
+* /cart/complete
+* /cart/list -> List all carts
 
 ## Next Steps
 * Make it mobile responsive
