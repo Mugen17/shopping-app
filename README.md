@@ -37,21 +37,23 @@ Link to application: https://shopping-app-flask.herokuapp.com/
 
 ## Endpoints
 * /user/create
-  body contains name, username, password 
-* /user/login 
+  * body contains name, username, password 
+* /user/login
+  * body contains username, candidate password 
 * /user/logout
-* /user/getUser
-* /user/list
-* /order/history
+* /user/getUser?token=<adminToken>&userId=<userId>
+* /user/list?page=
+* /order/history?token=<userToken>
 * /order/list
 * /item/create
-* /item/list
-* /cart/add
-* /cart/remove
-* /cart/getItems
-* /cart/getItemsFromId
-* /cart/complete
-* /cart/list -> List all carts
+  * body contains name,desc,price,image
+* /item/list?page=
+* /cart/add?token=<userToken>&itemId=<itemId>
+* /cart/remove?token=<userToken>&itemId=<itemId>
+* /cart/getItems?token=<userToken>
+* /cart/getItemsFromId?token=<adminToken>&cartId=<cartId>
+* /cart/complete?token=<userToken>
+* /cart/list?page=
 
 ## Next Steps
 * Make it mobile responsive
