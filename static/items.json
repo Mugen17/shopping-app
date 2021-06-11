@@ -1,0 +1,64 @@
+{
+	"items":[
+		{
+			"name":"Samsung Galaxy M11",
+			"description":"Samsung Galaxy M11 smartphone was launched on 30th March 2020. The phone comes with a 6.40-inch touchscreen display with a resolution of 720x1560 pixels. Samsung Galaxy M11 is powered by a 1.8GHz octa-core Qualcomm Snapdragon 450 processor. It comes with 3GB of RAM. The Samsung Galaxy M11 runs Android and is powered by a 5000mAh non-removable battery. The Samsung Galaxy M11 supports proprietary fast charging.",
+			"price":"9499",
+			"path":"./static/phoneImages/galaxym11.jpg"
+		},
+		{
+			"name":"Samsung Galaxy M12",
+			"description":"Samsung Galaxy M12 smartphone was launched on 5th February 2021. The phone comes with a 6.50-inch touchscreen display with a resolution of 720x1600 pixels and an aspect ratio of 20:9. Samsung Galaxy M12 is powered by an octa-core processor. It comes with 3GB of RAM. The Samsung Galaxy M12 runs Android and is powered by a 6000mAh battery.",
+			"price":"10499",
+			"path":"./static/phoneImages/galaxym12.jpg"
+		},
+		{
+			"name":"Samsung Galaxy M31",
+			"description":"The Samsung Galaxy M series has gained a lot of popularity thanks to affordable prices and up-to-date hardware. Samsung has managed to lower prices by selling these models online, reducing distribution costs. The sub-Rs. 15,000 Samsung Galaxy M30 set the pace, and a refreshed version, the Galaxy M30s, really helped the company strengthen its position in this segment. Samsung has now launched a successor to the Galaxy M30s, called the Galaxy M31. You now get a quad-camera setup, an upgrade from the triple camera setup on the M30s. However, the processor and the battery capacity remain unchanged. Will this be enough to keep the Galaxy M series competitive in the market? We review the Galaxy M31 to find out.",
+			"price":"14999",
+			"path":"./static/phoneImages/galaxym31.jpg"
+		},
+		{
+			"name":"iPhone 12 Mini",
+			"description":"Apple prides itself on setting trends and not following them, and the iPhone 12 mini is a prime example of that. In a world where nearly all smartphones have 6-inch or larger screens, this new 5.4-inch model does stand out. Even as the iPhone 12 Pro Max launches with the biggest screen ever on an Apple phone, the company balances things out with this shrunken option. It's aimed mainly at people who have been holding on to their older iPhone 5 or 6-era devices because they like the size, but it also might just solve a problem that you didn't even realise you had.",
+			"price":"61900",
+			"path":"./static/phoneImages/iphone12mini.jpg"
+		},
+		{
+			"name":"OnePlus 9",
+			"description":"Over the past few generations, OnePlus' non-Pro smartphones have often been neglected in favour of the Pro models. The feature disparity between the OnePlus 7 and 7 Pro is still the best example to date. Things did improve slightly with the 8 series, but higher prices have also meant that the non-Pro models don't offer as much value for money. With this year's 9 series, OnePlus' much-hyped Hasselblad partnership extends to the OnePlus 9, and isn't limited to the 9 Pro, which is great.",
+			"price":"49900",
+			"path":"./static/phoneImages/oneplus9.jpg"
+		},
+		{
+			"name":"Oppo A31",
+			"description":"Oppo A31 (2020) smartphone was launched on 14th February 2020. The phone comes with a 6.50-inch touchscreen display with a resolution of 720x1600 pixels and an aspect ratio of 20:9. Oppo A31 (2020) is powered by a 2.3GHz octa-core MediaTek Helio P35 (MT6765) processor. It comes with 4GB of RAM. The Oppo A31 (2020) runs Android 9 and is powered by a 4230mAh non-removable battery.",
+			"price":"10490",
+			"path":"./static/phoneImages/oppoa31.jpg"
+		},
+		{
+			"name":"Redmi 9",
+			"description":"There's been a sudden surge of budget phone launches in the past few months; the Redmi 9 from Xiaomi being one of them. This recent offering is priced under Rs. 10,000 and is the successor to the Redmi 8 (Review). The Redmi 9 sold in India shouldn't be confused with the global model of the same name, which is sold as the Redmi 9 Prime (Review) over here. The Indian version of the Redmi 9 is actually a tweaked Redmi 9C.",
+			"price":"8799",
+			"path":"./static/phoneImages/redmi9.jpg"
+		},
+		{
+			"name":"Redmi 9A",
+			"description":"Redmi 9A smartphone was launched on 30th June 2020. The phone comes with a 6.53-inch touchscreen display with a resolution of 720x1600 pixels and an aspect ratio of 20:9. Redmi 9A is powered by a 2GHz octa-core MediaTek Helio G25 processor. It comes with 2GB of RAM. The Redmi 9A runs Android 10 and is powered by a 5000mAh non-removable battery. The Redmi 9A supports proprietary fast charging.",
+			"price":"6799",
+			"path":"./static/phoneImages/redmi9A.jpg"
+		},
+		{
+			"name":"Redmi Note 9",
+			"description":"The Redmi Note 9 Pro has just been launched in India, and its starting price of Rs. 12,999 is surprisingly low because Xiaomi has made a few very interesting decisions in terms of positioning and features. It isn't easy to stay ahead of the game, and the Redmi Note 9 Pro goes up against the formidable Realme 6 and Samsung M30s. Longtime fans of the series might be surprised at how Xiaomi has actually held back a little with this model, since expectations are always when a new generation of Redmi Note smartphones is announced.",
+			"price":"12999",
+			"path":"./static/phoneImages/redminote9.jpg"
+		},
+		{
+			"name":"Tecno spark7",
+			"description":"Tecno Spark 7 smartphone was launched on 9th April 2021. The phone comes with a 6.52-inch touchscreen display with a resolution of 720x1600 pixels and an aspect ratio of 20:9. Tecno Spark 7 is powered by a 1.8GHz octa-core MediaTek Helio A25 processor. It comes with 3GB of RAM. The Tecno Spark 7 runs Android 11 and is powered by a 6000mAh battery.",
+			"price":"7499",
+			"path":"./static/phoneImages/spark7.jpg"
+		}
+	]
+}
