@@ -56,7 +56,7 @@ Link to application: https://shopping-app-flask.herokuapp.com/
 * /cart/list?page=
 
 ## Next Steps
-* Make it mobile responsive
+* Fix responsiveness
 * Allow for creation of more admin users
 * Maker-Checker for addition of items and creation of admins
 * Feature to remove item from list of items
