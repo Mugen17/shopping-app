@@ -41,18 +41,18 @@ Link to application: https://shopping-app-flask.herokuapp.com/
 * /user/login
   * body contains username, candidate password 
 * /user/logout
-* /user/getUser?token=[adminToken]&userId=<userId>
+* /user/getUser?token=[adminToken]&userId=[userId]
 * /user/list?page=
-* /order/history?token=<userToken>
+* /order/history?token=[userToken]
 * /order/list
 * /item/create
   * body contains name,desc,price,image
 * /item/list?page=
-* /cart/add?token=<userToken>&itemId=<itemId>
-* /cart/remove?token=<userToken>&itemId=<itemId>
-* /cart/getItems?token=<userToken>
-* /cart/getItemsFromId?token=<adminToken>&cartId=<cartId>
-* /cart/complete?token=<userToken>
+* /cart/add?token=[userToken]&itemId=[itemId]
+* /cart/remove?token=[userToken]&itemId=[itemId]
+* /cart/getItems?token=[userToken]
+* /cart/getItemsFromId?token=[adminToken]&cartId=[cartId]
+* /cart/complete?token=[userToken]
 * /cart/list?page=
 
 ## Next Steps
